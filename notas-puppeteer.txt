@@ -1,0 +1,65 @@
+-puppeteer
+ >Serve para automatizzar tarefas no navegador
+ >Trabalha com promisses (promessas) e a palavra-chave 'await' representa essas promisses
+ >'await': Faz com que o código pause para esperar determinada resposta (promisse)
+ >promisses: guarda uma promessa de que a função que gerou ela irá trazer alguma resposta no futuro, sendo ela positiva ou negativa
+
+-Para instalar o puppeteer padrão
+ >npm i puppeteer
+
+-Para instalar o pupeteer que não é detectado pelos sites
+ >npm init 
+ >npm install puppeteer-extra puppeteer-extra-plugin-stealth
+ 
+ /*declarações no inpicio do projeto*/
+ >const puppeteer = require('puppeteer-extra')
+ >const StealthPlugin = require('puppeteer-extra-plugin-stealth')
+ >puppeteer.use(StealthPlugin())
+
+
+-Para executar um código do puppeteer
+  >node caminho do arquivo
+
+-const puppeteer = require('puppeteer');
+  >Faz requisição do pacote puppeteer
+
+-const browser = await puppeteer.launch({headless:false}); 
+  >Carrega as configurações do navegador
+  >O parâmetro {headless:false} diz que o código irá operar mostrando o navegador
+  >O parâmetro {headless:true} diz que o código irá operar sem mostrar o navegador
+
+-const page = await browser.newPage();
+  >Cria um navegador sem usuário e sem senha para realizar as operações
+
+-await page.goto('link');
+  >O local do site para onde será enviada a operação desejada (criar pdf, criar print, etc.)
+
+-await page.waitForSelector('input[name="username"]')
+  >Faz com que o pupeteer aguarde o carregamento do seletor antes de realizar a ação, nesse caso um input de de formulário para preenchimento do email com o name de 'username'
+
+-await page.type('input[name="username"]', 'email' {delay:100})
+  >Faz com que digite algo no input especificado no primeiro parâmetro
+  >O segundo parâmetro é o que eu quero que seja digitado nesse input
+  >O terceiro parâmetro é o tempo que o pupeteer irá demorar para digitar os dados especificado no input
+
+-await page.click('componente que deve ser clicado')
+  >Especifica em qual componente da página o puppeteer deve clicar
+
+-await page.keyboard.press('tecla')
+  >Simula os caracteres do teclado
+
+-await page.screenshot({ path: 'nome.png', fullpage: true });
+  >Solicita um print da página epecificada no 'link' do 'page.goto'
+  >O primeiro parâmetro determina o nome que o arquivo terá e sua extensão
+  >O segundo parâmetro indica que o print deve ser do tamanho da página. Cado esse parâmetro não esteja especificado, serpa feito um print apenas de uma parte da página
+
+-await page.pdf({ path: 'nome.pdf', format: 'A4' });
+  >Solicita que se crie um pdf da página epecificada no 'link' do 'page.goto'
+  >O primeiro parâmetro determina o nome que o arquivo terá e sua extensão
+  >O segundo parâmetro determina o formato das páginas pdf
+
+-await page.setViewport({width: 1920, height: 1080})
+  >Determina o tamanho desejado da tela de exibição
+
+-await browser.close();
+  >Fecha o navegador quando encerra a operação solicitada

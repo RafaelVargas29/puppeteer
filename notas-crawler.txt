@@ -1,0 +1,32 @@
+-São robôs rastreadores que cumprem a função de realizar a varredura em sites, bancos de dados digitais, planilhas e pdfs. São criados para automatização de rotinas de dados
+
+-Crawler ou web crawler: Termos utilizados para tratar de algoritmos criados para coleta de dados. Também são conhecidos como spider ou scraper.
+
+-Função: buscar, coletar e organizar dados.
+
+-Utiliza callback
+ >Função assíncrona (função que espera algo acontecer antes de executar o resto do código)
+ >Na maioria das vezes é passada como argumento de um putra função
+ >Será executada quando algum evento acontecer
+ >No exemplo do crawler, a função de callback será executada depois do código verificar se a resposta veio ou se ococrreu um erro.
+
+-Benefícios: 
+ >Aumento da qualidade
+ >Aumento do volume e da agilidade
+ >Aumento no processamento de informações
+ >Otimização de recursos
+ >Redução de custos operacionais
+
+-Formas de utilização para uma empresa
+ >Pesquisar preços de empresa concorrentes
+ >Mapeamento de anpuncios, preços e localização de imóveis
+ >Criar certidões negativas, notícias, etc.
+
+-Forma e implementar
+ >Identificar o problema ou demanda
+ >Entender o volume de dados
+ >Mapear as fontes de consulta
+ >Descrever o fomrato ou plataforma para a entrega desses dados
+
+-Instalação
+ >npm install crawler
