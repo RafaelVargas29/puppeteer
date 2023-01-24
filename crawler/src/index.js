@@ -9,14 +9,9 @@ const raspar = new Crawler({
         }else{
             const $ = res.$;
             
-            //titulo puro
-            //console.log($('#main > div > span > div > div > div.lister > table > tbody > tr > td.titleColumn > a').text());
-            
-            //titulo e complementos (essa é a linha que eu devo explorar pois é mais simples de trabalhar os dados)
-            console.log($('#main > div > span > div > div > div.lister > table > tbody > tr > td.titleColumn').text());
-            
-            //avaliação dos filmes
-            //console.log($('#main > div > span > div > div > div.lister > table > tbody > tr > td.ratingColumn.imdbRating').text());
+            const a = $('#main > div > span > div > div > div.lister > table > tbody > tr > td.titleColumn').text();
+            const b =  a.replaceAll('\(', '').replaceAll('\)', '')
+            console.log(b)
         }
         done(); //indica que só seguirá para a próxima instrução quando o callback for finalizado
     }
