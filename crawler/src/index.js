@@ -10,7 +10,19 @@ const raspar = new Crawler({
             const $ = res.$;
             
             const a = $('#main > div > span > div > div > div.lister > table > tbody > tr > td.titleColumn').text();
-            const b =  a.replaceAll('\(', '').replaceAll('\)', '')
+            const b =  a.replaceAll('\(', '')
+                        .replaceAll('\)', '')
+                        .replaceAll('1', '')
+                        .replaceAll('2', '')
+                        .replaceAll('3', '')
+                        .replaceAll('4', '')
+                        .replaceAll('5', '')
+                        .replaceAll('6', '')
+                        .replaceAll('7', '')
+                        .replaceAll('8', '')
+                        .replaceAll('9', '')
+                        .replaceAll('0', '')
+            
             console.log(b)
         }
         done(); //indica que só seguirá para a próxima instrução quando o callback for finalizado
