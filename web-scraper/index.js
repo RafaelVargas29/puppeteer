@@ -6,19 +6,24 @@ const fs = require('fs');
     const page = await browser.newPage();
     await page.goto('https://www.imdb.com/chart/moviemeter/?ref_=nv_mv_mpm');
     
-    const imgList = await page.evaluate(() => {
+    const movieList = await page.evaluate(() => {
         const nodeList = document.querySelectorAll('tbody img')
 
         const imgArray = [...nodeList]
 
-        const imgList = imgArray.map( ({src}) => ({
-            src
+        const nameList = imgArray.map( ({alt}) => ({
+            alt
         }))
 
-       return imgList
+        /* const imgList = imgArray.map( ({src}) => ({
+             src
+        }))*/
+
+       //return imgList
+       return nameList
     });
 
-    fs.writeFile('filmes.json', JSON.stringify(imgList, null, 2), err => {
+    fs.writeFile('movies.json', JSON.stringify(movieList, null, 2), err => {
         if(err) throw new Error('alguma coisa deu errado')
         
         console.log('deu certo')

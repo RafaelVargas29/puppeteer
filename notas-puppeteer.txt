@@ -63,3 +63,15 @@
 
 -await browser.close();
   >Fecha o navegador quando encerra a operação solicitada
+
+-await page.evaluate(() => {});
+ >Funecebe uma função como parâmetro
+ >É executada pelo protocolo Chrome DevTools (no browser)
+ >Por ser executada no browser, não pode acessar variáveis de escopo no script
+
+-document.querySelectorAll('selector);
+ >Retorna um NodeList com todos os dados que estiverem marcados com o seletor especificado
+
+-NodeList:
+ >É uma lista de objetos estraídos de um documento web
+ >
