@@ -74,4 +74,21 @@
 
 -NodeList:
  >É uma lista de objetos estraídos de um documento web
- >
+ >Guarda dados do seletor escolhido no passo acima
+
+-.map()
+ >Método usado para manipulação de objetos do tipo array
+ >Funciona como uma estrutura de repetição
+ >Itera um determinado array, executa determinada ação e returna um novo conteúdo
+
+-fs.writeFile()
+ >Usado para guardar dados especificados em um arquivo
+ >Primeiro parâmetro: String, buffer ou url que denota o caminho onde o arquivo será escrito
+ >Segundo parâmetro: String, buffer ou dado que será escrito no arquivo
+ >Terceiro parâmetro: Função callback que é chamada quando método é executado e retorna um erro caso algo dê errado
+
+-JSON.stringify()
+ >Transforma valores JavaScript e valores JSON
+ >Primeiro parâmetro: O valor a ser convertido em uma string JSON
+ >Segundo parâmetro: Arays, strings, ou números que você deseja ignorar no processo de Transformação em objeto JSON
+ >Terceiro parâmetro: Número de espaços que você deseja ter entre uma string e outra

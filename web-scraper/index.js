@@ -7,10 +7,13 @@ const fs = require('fs');
     await page.goto('https://www.imdb.com/chart/moviemeter/?ref_=nv_mv_mpm');
     
     const movieList = await page.evaluate(() => {
-        const nodeList = document.querySelectorAll('tbody img')
+        //capturando os elementos do seletor escolhido
+        const nodeList = document.querySelectorAll('tbody strong')
 
+        //espalhando os elementos do nodelist em um array de elementos
         const imgArray = [...nodeList]
 
+        //pegando um atributo do elemento escolhido (alt: nome do filme)
         const nameList = imgArray.map( ({alt}) => ({
             alt
         }))
@@ -19,10 +22,15 @@ const fs = require('fs');
              src
         }))*/
 
+         /* const imgList = imgArray.map( ({title}) => ({
+             title
+        }))*/
+
        //return imgList
        return nameList
     });
 
+    //guardando os atibutos coletados em um arquivo .json
     fs.writeFile('movies.json', JSON.stringify(movieList, null, 2), err => {
         if(err) throw new Error('alguma coisa deu errado')
         
