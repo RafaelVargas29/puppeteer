@@ -2,13 +2,13 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 
 (async () => {
-    const browser = await puppeteer.launch({headless: false});
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto('https://www.imdb.com/chart/moviemeter/?ref_=nv_mv_mpm');
     
     const movieList = await page.evaluate(() => {
         //capturando os elementos do seletor escolhido
-        const nodeList = document.querySelectorAll('tbody strong')
+        const nodeList = document.querySelectorAll('tbody img')
 
         //espalhando os elementos do nodelist em um array de elementos
         const imgArray = [...nodeList]
